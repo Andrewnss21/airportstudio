@@ -1,0 +1,192 @@
+/* ============================================================
+   layout.css — Airport Studio
+   Propósito: Estructura global de la página.
+   Incluye: Navegación, Footer, Ticker, y contenedores
+   de sección principales.
+============================================================ */
+
+/* ── NAVEGACIÓN ── */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 56px;
+  backdrop-filter: blur(24px);
+  background: rgba(6, 6, 6, 0.88);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
+}
+
+.nav-logo-img {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+  border: 1px solid var(--border-strong);
+}
+
+.nav-logo-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.nav-brand {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-brand-name {
+  font-family: var(--font-display);
+  font-size: 20px;
+  letter-spacing: .15em;
+  color: var(--white);
+}
+
+.nav-brand-sub {
+  font-size: 9px;
+  letter-spacing: .35em;
+  text-transform: uppercase;
+  color: var(--gray);
+  margin-top: -2px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+}
+
+.nav-links a {
+  color: var(--gray);
+  text-decoration: none;
+  font-size: 11px;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  transition: color .3s;
+}
+
+.nav-links a:hover {
+  color: var(--white);
+}
+
+.nav-cta {
+  border: 1px solid var(--white);
+  color: var(--white);
+  padding: 10px 28px;
+  font-size: 11px;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: none;
+  transition: background .3s, color .3s;
+}
+
+.nav-cta:hover {
+  background: var(--white);
+  color: var(--black);
+}
+
+/* ── TICKER ── */
+.ticker {
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  overflow: hidden;
+  padding: 16px 0;
+  position: relative;
+  z-index: 1;
+}
+
+.ticker-track {
+  display: flex;
+  animation: ticker 32s linear infinite;
+  white-space: nowrap;
+}
+
+.ticker-item {
+  font-family: var(--font-display);
+  font-size: 17px;
+  letter-spacing: .12em;
+  color: var(--gray);
+  padding: 0 56px;
+  display: flex;
+  align-items: center;
+  gap: 56px;
+}
+
+.ticker-dot {
+  width: 4px;
+  height: 4px;
+  background: var(--white);
+  border-radius: 50%;
+}
+
+/* ── FOOTER ── */
+footer {
+  padding: 40px 56px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.f-logo {
+  font-family: var(--font-display);
+  font-size: 20px;
+  letter-spacing: .12em;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.f-logo img {
+  height: 32px;
+  border-radius: 50%;
+}
+
+.f-copy {
+  color: var(--gray);
+  font-size: 12px;
+  letter-spacing: .1em;
+}
+
+.f-social {
+  display: flex;
+  gap: 12px;
+}
+
+.soc {
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gray);
+  text-decoration: none;
+  transition: border-color .3s, color .3s;
+  cursor: none;
+}
+
+.soc:hover {
+  border-color: var(--white);
+  color: var(--white);
+}
+
+.soc svg {
+  width: 16px;
+  height: 16px;
+}

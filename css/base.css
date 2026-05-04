@@ -1,0 +1,166 @@
+/* ============================================================
+   base.css — Airport Studio
+   Propósito: Variables CSS globales, reset, tipografía base,
+   cursor personalizado y overlay de grid de fondo.
+   Debe cargarse PRIMERO antes de cualquier otro archivo CSS.
+============================================================ */
+
+/* ── VARIABLES GLOBALES ── */
+:root {
+  /* Colores principales */
+  --black:             #060606;
+  --white:             #f2f2f0;
+  --gray:              #888884;
+  --light-gray:        #ccccca;
+
+  /* Bordes */
+  --border:            rgba(242, 242, 240, 0.10);
+  --border-strong:     rgba(242, 242, 240, 0.22);
+
+  /* Grid de fondo */
+  --grid:              rgba(242, 242, 240, 0.03);
+
+  /* Colores de tickets / paquetes */
+  --ticket-cyan:       #5ce8e8;
+  --ticket-cyan-dark:  #00b8c8;
+  --ticket-cyan-mid:   #4ad8d8;
+  --ticket-amber:      #f5a800;
+  --ticket-amber-dark: #1a1400;
+  --ticket-amber-mid:  #e09800;
+  --ticket-dark:       #1a1a18;
+  --ticket-dark-bg:    #0d0d0c;
+
+  /* Tipografía */
+  --font-display:      'Bebas Neue', sans-serif;
+  --font-heading:      'Syne', sans-serif;
+  --font-body:         'DM Sans', sans-serif;
+
+  /* Espaciado de secciones */
+  --section-padding:   128px 56px;
+  --section-padding-sm: 80px 20px;
+}
+
+/* ── RESET ── */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ── HTML BASE ── */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ── BODY ── */
+body {
+  background: var(--black);
+  color: var(--white);
+  font-family: var(--font-body);
+  font-weight: 300;
+  overflow-x: hidden;
+  cursor: none;
+}
+
+/* ── GRID DE FONDO (overlay decorativo) ── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 72px 72px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── CURSOR PERSONALIZADO ── */
+.cursor {
+  position: fixed;
+  width: 8px;
+  height: 8px;
+  background: var(--white);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  mix-blend-mode: difference;
+  transition: width .25s, height .25s;
+}
+
+.cursor-ring {
+  position: fixed;
+  width: 32px;
+  height: 32px;
+  border: 1px solid rgba(242, 242, 240, 0.5);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  mix-blend-mode: difference;
+}
+
+/* ── UTILIDADES GLOBALES ── */
+section {
+  position: relative;
+  z-index: 1;
+}
+
+.section-tag {
+  font-size: 10px;
+  letter-spacing: .4em;
+  text-transform: uppercase;
+  color: var(--gray);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.section-tag::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+/* ── ANIMACIÓN DE REVEAL (scroll) ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(36px);
+  transition: opacity .8s, transform .8s;
+}
+
+.reveal.vis {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── KEYFRAMES GLOBALES ── */
+@keyframes drift {
+  from { transform: translate(0, 0); }
+  to   { transform: translate(30px, 20px) scale(1.06); }
+}
+
+@keyframes floatLogo {
+  from { transform: translateY(-50%) scale(1) rotate(-1deg); }
+  to   { transform: translateY(-52%) scale(1.03) rotate(.5deg); }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(36px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: .4; width: 40px; }
+  50%       { opacity: 1; width: 64px; }
+}
+
+@keyframes ticker {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}

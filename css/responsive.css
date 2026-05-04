@@ -1,0 +1,115 @@
+/* ============================================================
+   responsive.css — Airport Studio
+   Propósito: Gestión completa del diseño adaptable (mobile-first).
+   Contiene TODOS los @media queries del proyecto.
+   Cargado al final para sobrescribir correctamente.
+============================================================ */
+
+@media (max-width: 768px) {
+
+  /* ── Navegación ── */
+  nav {
+    padding: 16px 20px;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  /* ── Secciones — padding reducido ── */
+  .hero,
+  .services,
+  .why,
+  .process,
+  .portfolio,
+  .cta,
+  .contact,
+  .packages {
+    padding: var(--section-padding-sm);
+  }
+
+  /* ── Hero ── */
+  .hero-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 32px;
+  }
+
+  .hero-brand-logo {
+    display: none;
+  }
+
+  /* ── Servicios ── */
+  .services-header,
+  .why-inner,
+  .contact-inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .svc {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+
+  /* ── Proceso ── */
+  .process-steps {
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+  }
+
+  .process-steps::before {
+    display: none;
+  }
+
+  /* ── Portafolio ── */
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .p-item {
+    height: 260px;
+  }
+
+  .p-item-lg {
+    grid-column: span 1;
+  }
+
+  /* ── Formulario ── */
+  .frow {
+    grid-template-columns: 1fr;
+  }
+
+  /* ── Footer ── */
+  footer {
+    flex-direction: column;
+    gap: 24px;
+    text-align: center;
+    padding: 32px 20px;
+  }
+
+  /* ── Stats ── */
+  .stats {
+    flex-wrap: wrap;
+    gap: 28px;
+  }
+
+  /* ── Paquetes ── */
+  .pkg-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pkg-featured {
+    transform: none;
+  }
+
+  .pkg-badge {
+    top: -12px;
+  }
+
+}
