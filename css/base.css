@@ -164,3 +164,21 @@ section {
   from { transform: translateX(0); }
   to   { transform: translateX(-50%); }
 }
+
+
+/* Evita la seleccion del cursor */
+p, span, h1, h2, h3, h4, h5, h6, li {
+    -webkit-user-select: none; /* Safari y navegadores basados en Webkit */
+    -moz-user-select: none;    /* Firefox */
+    -ms-user-select: none;     /* IE/Edge */
+    user-select: none;         /* Estándar */
+}
+
+/* permite selección en elementos donde SÍ sea útil (ej. un email o un código) */
+.allow-selection {
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+}
+
