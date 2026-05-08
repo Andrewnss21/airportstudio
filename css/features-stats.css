@@ -1,0 +1,111 @@
+
+/* ════════════════════════════════════
+   "POR QUÉ NOSOTROS" — Features y Stats
+════════════════════════════════════ */
+
+.stats {
+  display: flex;
+  gap: 52px;
+}
+
+.stat-n {
+  font-family: var(--font-display);
+  font-size: 60px;
+  line-height: 1;
+  color: var(--white);
+}
+
+.stat-l {
+  font-size: 10px;
+  letter-spacing: .25em;
+  text-transform: uppercase;
+  color: var(--gray);
+  margin-top: 4px;
+}
+
+.features {
+  list-style: none;
+}
+
+.feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  padding: 28px 0;
+  border-bottom: 1px solid var(--border);
+  cursor: none;
+  transition: padding-left .3s;
+}
+
+.feature:hover {
+  padding-left: 10px;
+}
+
+.feature-box {
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--border-strong);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.feature h4 {
+  font-family: var(--font-heading);
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.feature p {
+  color: var(--gray);
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+/* ════════════════════════════════════
+   PASOS DEL PROCESO (.step)
+════════════════════════════════════ */
+
+.step {
+  text-align: center;
+  padding: 0 20px;
+}
+
+.step-dot {
+  width: 54px;
+  height: 54px;
+  border: 1px solid var(--white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 36px;
+  background: var(--black);
+  position: relative;
+  z-index: 1;
+  font-family: var(--font-display);
+  font-size: 20px;
+  transition: background .3s, color .3s;
+  cursor: none;
+}
+
+.step:hover .step-dot {
+  background: var(--white);
+  color: var(--black);
+}
+
+.step-name {
+  font-family: var(--font-heading);
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.step-desc {
+  color: var(--gray);
+  font-size: 13px;
+  line-height: 1.7;
+}

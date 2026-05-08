@@ -1,0 +1,103 @@
+
+/* ════════════════════════════════════
+   FORMULARIO DE CONTACTO
+════════════════════════════════════ */
+
+.cform {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.frow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.ff {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ff label {
+  font-size: 10px;
+  letter-spacing: .32em;
+  text-transform: uppercase;
+  color: var(--gray);
+}
+
+.ff input,
+.ff textarea,
+.ff select {
+  background: rgba(242, 242, 240, .03);
+  border: 1px solid var(--border);
+  color: var(--white);
+  padding: 14px 16px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 300;
+  outline: none;
+  width: 100%;
+  resize: none;
+  appearance: none;
+  transition: border-color .3s;
+  cursor: none;
+}
+
+.ff input:focus,
+.ff textarea:focus,
+.ff select:focus {
+  border-color: var(--white);
+}
+
+.ff select option {
+  background: #111110;
+}
+
+.submit {
+  background: var(--white);
+  color: var(--black);
+  padding: 18px;
+  border: none;
+  width: 100%;
+  font-family: var(--font-body);
+  font-size: 12px;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  font-weight: 500;
+  cursor: none;
+  transition: opacity .3s, transform .3s;
+}
+
+.submit:hover {
+  opacity: .9;
+  transform: translateY(-2px);
+}
+
+/* ── Íconos de contacto ── */
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.c-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  color: var(--gray);
+  font-size: 14px;
+}
+
+.c-item-icon {
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 14px;
+}
