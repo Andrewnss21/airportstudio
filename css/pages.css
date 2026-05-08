@@ -292,7 +292,7 @@
 .portfolio-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 220px 300px 380px 280px;
+  grid-template-rows: 220px 330px 380px 280px;
   gap: 3px;
 }
 
