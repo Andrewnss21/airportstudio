@@ -20,6 +20,71 @@
   overflow: hidden;
 }
 
+/* ════════════════════════════════════
+   HERO CAROUSEL
+════════════════════════════════════ */
+
+.hero-carousel {
+  position: absolute;
+  top: 50%;
+  right: 60px;
+  transform: translateY(-50%);
+  width: min(360px, 32vw);
+  pointer-events: none;
+}
+
+.hero-carousel-track {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+}
+
+.hero-carousel-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  mix-blend-mode: screen;
+}
+
+.hero-carousel-slide.active {
+  opacity: 0.92;
+}
+
+.hero-carousel-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 4px;
+}
+
+/* Dots */
+.hero-carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 16px;
+  pointer-events: all;
+}
+
+.hero-carousel-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(242, 242, 240, 0.3);
+  cursor: pointer;
+  transition: background .3s, transform .3s;
+  padding: 0;
+}
+
+.hero-carousel-dot.active {
+  background: var(--white);
+  transform: scale(1.3);
+}
+
+
 /* Orbes de fondo */
 .hero-orb {
   position: absolute;

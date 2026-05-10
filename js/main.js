@@ -119,4 +119,60 @@ document.addEventListener('DOMContentLoaded', () => {
   initCursor();
   initScrollReveal();
   initNav();
+  initHeroCarousel();
 });
+
+
+/* ── HERO CAROUSEL ── */
+function initHeroCarousel() {
+  const slides = document.querySelectorAll('.hero-carousel-slide');
+  const dots   = document.querySelectorAll('.hero-carousel-dot');
+
+  // Si no hay carrusel en la página, salir
+  if (!slides.length) return;
+
+  let current  = 0;
+  let interval = null;
+
+  function goTo(index) {
+    // Quitar activo del slide y dot actuales
+    slides[current].classList.remove('active');
+    dots[current].classList.remove('active');
+
+    // Actualizar índice
+    current = (index + slides.length) % slides.length;
+
+    // Activar el nuevo slide y dot
+    slides[current].classList.add('active');
+    dots[current].classList.add('active');
+  }
+
+  function next() {
+    goTo(current + 1);
+  }
+
+  function startAutoplay() {
+    interval = setInterval(next, 4000); // cambia cada 4 segundos
+  }
+
+  function stopAutoplay() {
+    clearInterval(interval);
+  }
+
+  // Click en dots para navegación manual
+  dots.forEach((dot, i) => {
+    dot.addEventListener('click', () => {
+      stopAutoplay();
+      goTo(i);
+      startAutoplay(); // reinicia el autoplay tras click manual
+    });
+  });
+
+  // Pausar al hacer hover
+  const carousel = document.querySelector('.hero-carousel');
+  carousel.addEventListener('mouseenter', stopAutoplay);
+  carousel.addEventListener('mouseleave', startAutoplay);
+
+  // Arrancar
+  startAutoplay();
+}
