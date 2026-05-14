@@ -166,19 +166,21 @@ section {
 }
 
 
-/* Evita la seleccion del cursor */
-p, span, h1, h2, h3, h4, h5, h6, li {
-    -webkit-user-select: none; /* Safari y navegadores basados en Webkit */
-    -moz-user-select: none;    /* Firefox */
-    -ms-user-select: none;     /* IE/Edge */
-    user-select: none;         /* Estándar */
+/* Evita la seleccion del cursor y menús nativos en móviles */
+*, *::before, *::after {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
-/* permite selección en elementos donde SÍ sea útil (ej. un email o un código) */
-.allow-selection {
-    -webkit-user-select: text;
-    -moz-user-select: text;
-    -ms-user-select: text;
-    user-select: text;
+/* Permite selección e interacciones nativas en inputs o clases específicas */
+input, textarea, select, button, .allow-selection {
+    -webkit-user-select: auto;
+    -moz-user-select: auto;
+    -ms-user-select: auto;
+    user-select: auto;
 }
 
