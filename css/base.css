@@ -89,6 +89,7 @@ body::before {
   transform: translate(-50%, -50%);
   mix-blend-mode: difference;
   transition: width .25s, height .25s;
+  will-change: left, top;
 }
 
 .cursor-ring {
@@ -101,6 +102,7 @@ body::before {
   z-index: 9998;
   transform: translate(-50%, -50%);
   mix-blend-mode: difference;
+  will-change: left,top;
 }
 
 /* ── UTILIDADES GLOBALES ── */
